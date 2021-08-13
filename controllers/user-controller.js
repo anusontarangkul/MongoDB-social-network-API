@@ -9,7 +9,7 @@ const userController = {
             .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
-                res.status(400).json(err);
+                res.status(500).json(err);
             });
     },
 
@@ -27,7 +27,7 @@ const userController = {
             })
             .catch(err => {
                 console.log(err);
-                res.status(400).json(err);
+                res.status(500).json(err);
             });
     },
 
@@ -35,7 +35,7 @@ const userController = {
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
-            .catch(err => res.status(400).json(err));
+            .catch(err => res.status(500).json(err));
     },
 
     // update user by id
@@ -47,7 +47,7 @@ const userController = {
                 }
                 res.json(dbUserData);
             })
-            .catch(err => res.status(400).json(err));
+            .catch(err => res.status(500).json(err));
     },
 
     // delete user
@@ -59,7 +59,7 @@ const userController = {
                 }
                 res.json(dbUserData);
             })
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.status(500).json(err))
     },
 
     // add friend

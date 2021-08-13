@@ -14,10 +14,14 @@ router
     .put(updateThought)
     .delete(deleteThought)
 
-// api/thoughts/:thoughtID/reactions
+// api/thoughts/:thoughtId/reactions
 router
-    .route('/:id/reactions')
-    .put(addReaction)
+    .route('/:thoughtId/reactions')
+    .post(addReaction)
+
+// api/thoughts/:thoughtId/reactions/:reactionId
+router
+    .route('/:thoughtId/reactions/:reactionId')
     .delete(removeReaction)
 
 module.exports = router;
